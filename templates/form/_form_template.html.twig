@@ -1,0 +1,31 @@
+<main id="mainFormEdit" class="container">
+    {{ form_start(form) }}
+
+    <div class="row section">
+        <div class="col s8 offset-s1 m6 offset-m1">
+            {{ form_row(form.name) }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s3 offset-s1">
+            {{ form_row(form.categories) }}
+        </div>
+        <div class="col s10 offset-s2">
+            {{ form_row(form.materiel) }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s9 offset-s1 m7 offset-m1">
+            {{ form_row(form.regle) }}
+        </div>
+        <div class="col s10 offset-s2">
+            {{ form_row(form.validate) }}
+        </div>
+    </div>
+    <div class="center-align section">
+        <button class="btn waves-effect waves-light yellow darken-1 black-text">{{ button }}
+            <i class="material-icons right">{{ m_icon }}</i>
+        </button>
+    </div>
+    {{ form_end(form) }}
+</main>

@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title 'Connection' %}
+
+{% block body %}
+    <h1 class="center-align">Customs</h1>
+    <main class="container row">
+        <div class="col s10 offset-s1 m8 offset-m2 l6 offset-l3">
+            <form method="post">
+                <div class="divLogin grey darken-4 z-depth-2">
+                    {% if app.user %}
+                        <div class="center-align">
+                            You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
+                        </div>
+                    {% endif %}
+
+                    {% if error %}
+                        <div class="spanRed center-align">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                    {% endif %}
+                    <label for="inputUsername">Username</label>
+                    <input class="white-text" type="text" value="{{ last_username }}" name="username" id="inputUsername" required autofocus>
+                    <label for="inputPassword">Password</label>
+                    <input class="white-text" type="password" name="password" id="inputPassword" required>
+                </div>
+                <input type="hidden" name="_csrf_token"
+                       value="{{ csrf_token('authenticate') }}"
+                >
+
+                {#
+                    Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
+                    See https://symfony.com/doc/current/security/remember_me.html
+
+                    <div class="checkbox mb-3">
+                        <label>
+                            <input type="checkbox" name="_remember_me"> Remember me
+                        </label>
+                    </div>
+                #}
+                <div class="center-align">
+                    <button class="btn" type="submit">
+                        Se connecter
+                    </button>
+                </div>
+            </form>
+            <section class="center-align">
+                <a class="white-text" href="{{ path('signin') }}" title="New user">S'inscrire</a>
+            </section>
+        </div>
+    </main>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title 'Validation' %}
+
+{% block body %}
+
+    <h1 class="center-align">Validation</h1>
+    <main class="container section">
+        <section class="center-align flow-text grey darken-4 section border-radius-box z-depth-4">
+            {% if message %}<p class="pHome yellow-text">{{ message }}</p>{% endif %}
+            <article class="grey darken-3 z-depth-2 container section white-text border-radius-box">
+                <p>
+                    Merci de votre souscription et bienvenue sur notre site {{ user.username }}
+                </p>
+                <p>
+                    Vous pouvez maintenant ajouter des jeux
+                </p>
+                <a class="btn" href="{{ path('app_login') }}" title="Login">S'identifier</a>
+            </article>
+        </section>
+    </main>
+
+
+
+{% endblock %}
+
+

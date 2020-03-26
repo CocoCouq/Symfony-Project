@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title 'Games' %}
+
+{% block body %}
+    <h1 class="center-align section">Games</h1>
+    <main class="container section">
+        <table class="highlight centered responsive-table">
+            {% for message in app.flashes('success') %}
+                <section class="grey darken-2 flow-text row">
+                    <span class="col s12 center-align spanRed">{{ message }}</span>
+                </section>
+            {% endfor %}
+            <thead class="grey darken-4 white-text flow-text">
+                <th>Nom</th>
+                <th>Materiel</th>
+                <th>Catégorie</th>
+                <th></th>
+            </thead>
+            <tbody>
+
+        {% for game in games %}
+            <tr class="flow-text">
+                <td><b>{{ game.name }}</b></td>
+                <td><ins>{{ game.formatMateriel }}</ins></td>
+                <td><ins>{{ game.categType }}</ins></td>
+                <td>
+                    <a class="waves-effect waves-light btn modal-trigger" href="#modal{{ game.id }}">Règles</a>
+
+                    <div id="modal{{ game.id }}" class="modal">
+                        <div class="modal-content">
+                            <h2 class="titleModal">{{ game.name }}</h2>
+                            <p class="reglesModal">{{ game.regle }}</p>
+                        </div>
+                        <div class="modal-footer black">
+                            <a href="#!" class="modal-close btn blue">Retour</a>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        {% endfor %}
+
+            </tbody>
+        </table>
+    </main>
+{% endblock %}

@@ -1,0 +1,8 @@
+{% extends 'base.html.twig' %}
+
+{% block title 'Modifer un jeu' %}
+
+{% block body %}
+    <h1 class="center-align section">Edit Game</h1>
+    {{ include('form/_form_template.html.twig', {form: form, button: 'Modifier', m_icon: 'edit'}) }}
+{% endblock %}

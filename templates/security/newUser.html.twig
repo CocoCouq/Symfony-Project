@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title 'S\'inscrire' %}
+
+{% block body %}
+    <h1 class="center-align">Census</h1>
+    <main class="container">
+        <div id="mainFormNewUser" class="grey darken-4 white-text z-depth-4">
+            {{ form_start(form) }}
+            <div class="row valign-wrapper">
+                <img class="responsive-img col s3 m2 offset-m1" src="{{ asset('images/joinform.png') }}" alt="Join the force">
+                <div class="col s8 m4 offset-m1">
+                    {{ form_row(form.username) }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s6 m4 offset-m1">
+                    {{ form_row(form.password) }}
+                </div>
+                <div class="input-field col s6 m4 offset-m2">
+                    <input id="pwd_conf" type="password" class="validate" name="pwd_conf">
+                    <label for="pwd_conf">Confirmez</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s6 offset-s3 m4 offset-m4">
+                    {{ form_row(form.email) }}
+                </div>
+            </div>
+            <div>
+                {{ form_row(form.userToken, {'value': date().format('U')}) }}
+            </div>
+            <div class="center-align section">
+                <button class="btn waves-effect waves-light yellow darken-1 black-text">S'inscrire
+                    <i class="material-icons right">add</i>
+                </button>
+            </div>
+            {{ form_end(form) }}
+        </div>
+    </main>
+
+{% endblock %}
+
+

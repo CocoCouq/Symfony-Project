@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <style>
+        @font-face
+        {
+            font-family: 'Jedi';
+            src: url('http://127.0.0.1:8000/css/font/JediText.ttf') format('truetype');
+        }
+        html{
+            background: url(http://127.0.0.1:8000/images/background.jpg) no-repeat center;
+            background-size: cover;
+            font-family: Jedi, sans-serif;
+        }
+        body{
+            display: flex;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+    </style>
+    {% block stylesheets %}{% endblock %}
+</head>
+<body>
+<div class="row grey darken-4">
+    <p class="col s2 red-text"><i class="material-icons right">report</i>Ne pas répondre</p>
+    <img class="col s4 m2 offset-s2 offset-m3 responsive-img" src="http://127.0.0.1:8000/images/logo.png" alt="StarWorms">
+</div>
+
+{% block body %}{% endblock %}
+
+<footer class="page-footer grey darken-4">
+    <div class="container">
+        © 2014 CocoCouq
+        <a class="grey-text text-lighten-4 right" href="https://www.github.com/CocoCouq">GitHub</a>
+    </div>
+    <div class="center-align">
+        <a href="#">Se désinscrire</a>
+    </div>
+</footer>
+{% block javascripts %}{% endblock %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>

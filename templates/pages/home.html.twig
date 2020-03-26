@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title 'Home' %}
+
+{% block body %}
+    <h1 class="center-align section">Welcome</h1>
+    <main>
+        <section id="sectionHome" class="center-align">
+            <article>
+                <p id="pHome1">
+                    Star Worms reprend une base de données d'activités à réaliser entre amis, entre collègues.
+                </p>
+                <p id="pHome2">
+                    L'objectif est de pouvoir à terme créer des compétitions auto-générées avec les épreuves et les régles souhaitées.
+                </p>
+            </article>
+            <article>
+                <p id="pHome3">Revenez rapidement afin de voir les modifications apportées. Nous aurons pleins d'activités à partagées avec vos amis.</p>
+                <p id="pHome4">Vous pourrez bientôt sortir de chez vous</p>
+                <p id="pHome5">Merci de votre soutient !!!</p>
+                <p id="pHome6">. . .</p>
+            </article>
+        </section>
+    </main>
+    <section class="container section ">
+        <div id="newGames">
+            <div class="center-align section">
+                <span class="new badge blue"></span><h2>Nouveau</h2>
+            </div>
+            {% for game in games %}
+            <article class="white-text row">
+                <h3 class="s12 gamesNames center-align">{{ game.name }}</h3>
+                <p class="col s8 offset-s2 center-align pHome">{{ game.formatMateriel }} Matériel</p>
+                <p class="col s8 offset-s2 center-align pHome">{{ game.categType }}</p>
+                <p id="ReglesTitleHome" class="col s6 offset-s1 badgeWars flow-text center-align">Règles</p>
+                <p class="col s8 justText">{{ game.regle }}</p>
+            </article>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}
+
+

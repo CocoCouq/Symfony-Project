@@ -1,0 +1,229 @@
+@font-face
+{
+    font-family: 'JediTitle';
+    src: url('font/JediText.ttf') format('truetype');
+}
+@font-face
+{
+    font-family: 'JediText';
+    src: url("font/JediText.ttf") format("truetype");
+}
+@font-face
+{
+    font-family: 'JediTitleOut';
+    src: url("font/JediTitleOut.ttf") format("truetype");
+}
+@font-face
+{
+    font-family: 'JediTextOut';
+    src: url("font/JediTextOut.ttf") format("truetype");
+}
+
+a{
+    font-family: JediTextOut;
+}
+
+html {
+    margin:0;
+    padding:0;
+    background: url(../images/background.jpg) no-repeat center fixed;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+
+footer{
+    padding: 7px !important;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+h1, h2{
+    font-family: JediTitle;
+    text-shadow: 1px 0 2px black, 0 0 2px white, 0 0 3px black, 2px 0 4px lightyellow;
+    color: #ffd600 !important;
+    font-size: 60px;
+}
+
+table{
+    background-color: rgba(0,0,0,0.70);
+}
+.btn{
+    font-family: JediTitle;
+    background-color: #003d5e;
+}
+
+.imgLogo{
+    height: 22vw !important;
+    max-height: 160px;
+}
+
+#sectionHome{
+    font-family: JediText;
+    text-shadow: 0 0 3px black, 0 0 5px black;
+    color: #ffd600 !important;
+}
+
+#pHome1{
+    font-size: 30px;
+}
+
+#pHome2{
+    font-size: 25px;
+}
+
+#pHome3{
+    font-size: 20px;
+}
+
+#pHome4{
+    font-size: 15px;
+}
+
+#pHome5{
+    font-size: 10px;
+}
+
+#pHome6{
+    font-size: 8px;
+}
+
+#newGames{
+    margin:0;
+    padding:20px;
+    background: url(../images/card.jpg) no-repeat center;
+    -webkit-background-size: cover;
+    background-size: cover;
+    border-radius: 5px;
+    box-shadow: 0px 0px 2px grey;
+}
+
+.gamesNames{
+    background-color: #DCDF20;
+    padding-bottom: 10px !important;
+    padding-top: 10px !important;
+    color: #2e3136;
+    font-family: JediTitle;
+    font-size: 30px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px yellow;
+}
+
+.justText{
+    text-align: justify;
+    background-color: #DCDF20;
+    font-family: JediText;
+    color: #2e3136;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px yellow;
+}
+
+#ReglesTitleHome{
+    font-family: JediTitle;
+}
+
+.pHome{
+    font-family: JediTextOut;
+    font-size: 20px;
+}
+
+.badgeWars{
+    background-color: #DCDF20;
+    color: #2e3136;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px yellow;
+}
+
+th{
+    font-family: JediTitleOut;
+}
+
+td>b{
+    font-family: JediTextOut;
+    text-shadow: 1px 0 5px darkslategrey;
+    color: #DCDF20 !important;
+    white-space: break-spaces;
+}
+td>ins{
+    text-decoration: inherit;
+    font-family: JediTitleOut;
+    text-shadow: 0 0 5px black;
+    font-size: 15px;
+    color: #DCDF20 !important;
+}
+
+.reglesModal{
+    color: #eeeeee;
+    text-shadow: 0 0 5px black;
+    background: rgba(0,0,0,0.55);
+    font-family: JediText;
+    font-size: 20px;
+    white-space: break-spaces;
+    text-align: justify;
+}
+
+.modal{
+    background: url(../images/card.jpg) no-repeat right;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+
+#mainFormEdit{
+    margin-bottom: 50px;
+    background: url(../images/form.jpg) center;
+    background-size: cover;
+    border-radius: 5px;
+    box-shadow: yellow 0px 0px 3px;
+}
+
+.titleModal{
+    font-size: 4vw;
+}
+
+.btnDelete{
+    max-width: 52px;
+}
+
+#tableAdmin{
+    padding: 20px !important;
+
+}
+
+.pDelModal{
+    font-family: JediText;
+    white-space: break-spaces;
+    color: rgba(216, 219, 32, 0.9) !important;
+}
+
+.whiteSpace{
+    white-space: break-spaces;
+}
+
+.spanRed{
+    font-family: JediTitle;
+    color: red;
+
+}
+
+.divLogin{
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 30px;
+}
+
+#mainFormNewUser{
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.border-radius-box{
+    border-radius: 5px;
+}

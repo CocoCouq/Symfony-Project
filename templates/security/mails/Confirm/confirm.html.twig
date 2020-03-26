@@ -1,0 +1,28 @@
+{% extends 'security/mails/baseMail.html.twig' %}
+    {% block stylesheets %}
+        <style>
+            main{
+                border-radius: 5px;
+                flex: 1 0 auto;
+                margin-bottom: 20px !important;
+            }
+        </style>
+    {% endblock %}
+{% block body %}
+    <h1 class="center-align yellow-text">Bienvenue {{ user.username }}</h1>
+
+    <main class="container grey darken-1" >
+
+        <h2 class="flow-text center-align">Verification d'email</h2>
+        <section class="row">
+            <strong class="center-align col s12">Vous avez souscrit une inscription gratuite à Star Worms, nous vous remercions</strong>
+            <p class="center-align col s12">Afin de vérifier votre identité, merci de cliquer sur le lien suivant :</p>
+            <div class="center-align col s12">
+                <a class="btn yellow black-text" href="http://127.0.0.1:8000/login/signin/verif/{{ user.username }}/{{ user.userToken }}">
+                    Cliquez sur moi
+                </a>
+            </div>
+        </section>
+    </main>
+
+{% endblock %}
