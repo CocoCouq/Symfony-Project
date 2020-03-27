@@ -33,7 +33,11 @@
                 <p class="col s8 offset-s2 center-align pHome">{{ game.formatMateriel }} Matériel</p>
                 <p class="col s8 offset-s2 center-align pHome">{{ game.categType }}</p>
                 <p id="ReglesTitleHome" class="col s6 offset-s1 badgeWars flow-text center-align">Règles</p>
-                <p class="col s8 justText">{{ game.regle }}</p>
+                <div class="col s8 justText">
+                    <p>{{ game.rulesDescription }}</p>
+                    <p class="center-align pHome">Pour gagner</p>
+                    <p>{{ game.rulesWin }}</p>
+                </div>
             </article>
             {% endfor %}
         </div>

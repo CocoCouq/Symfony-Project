@@ -15,9 +15,26 @@
         </div>
     </div>
     <div class="row">
-        <div class="col s9 offset-s1 m7 offset-m1">
-            {{ form_row(form.regle) }}
+        <!-- Modal Trigger -->
+        <a class="waves-effect waves-light btn modal-trigger col offset-s2" href="#modal1">Règles</a>
+    </div>
+
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <h2 class="center-align">Règles</h2>
+            <div class="white">
+                {{ form_row(form.rulesDescription) }}
+                {{ form_row(form.rulesWin) }}
+                {{ form_row(form.rulesDetails) }}
+                {{ form_row(form.rulesUrl) }}
+            </div>
         </div>
+        <div class="modal-footer ">
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Accepter</a>
+        </div>
+    </div>
+    <div class="row">
         <div class="col s10 offset-s2">
             {{ form_row(form.validate) }}
         </div>

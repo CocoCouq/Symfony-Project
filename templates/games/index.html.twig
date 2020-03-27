@@ -30,7 +30,15 @@
                     <div id="modal{{ game.id }}" class="modal">
                         <div class="modal-content">
                             <h2 class="titleModal">{{ game.name }}</h2>
-                            <p class="reglesModal">{{ game.regle }}</p>
+                            <div class="reglesModal">
+                                <h3 class="center-align">Principe</h3>
+                                <p>{{ game.rulesDescription }}</p>
+                                <h3 class="center-align">Pour Gagner</h3>
+                                <p>{{ game.rulesWin }}</p>
+                                <h3 class="center-align">Règles</h3>
+                                <p>{{ game.rulesDetails }}</p>
+                                <a class="btn" href="{{ game.rulesUrl }}" target="_blank" title="lien">Lien</a>
+                            </div>
                         </div>
                         <div class="modal-footer black">
                             <a href="#!" class="modal-close btn blue">Retour</a>

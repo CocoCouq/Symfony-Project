@@ -16,10 +16,13 @@
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger"><img class="imgLogo" src="{{ asset('images/logo.png') }}" alt="Logo" title="logo"></a>
                 <ul class="right hide-on-med-and-down">
                     <li><a href="{{ path('games.index') }}">All games</a></li>
+                    {% if is_granted('ROLE_USER') or is_granted('ROLE_ADMIN') %}
                     <li><a href="{{ path('games.addGame') }}">New game</a></li>
-                    <li><a href="{{ path('admin.index') }}">admin</a></li>
+                    {% endif %}
                     <li><a href="{{ path('app_login') }}">LoGin</a></li>
-                    <li><a href="{{ path('app_logout') }}">LoGOut</a></li>
+                    {% if is_granted('ROLE_ADMIN') %}
+                    <li><a href="{{ path('admin.index') }}">admin</a></li>
+                    {% endif %}
                 </ul>
             </div>
         </nav>
@@ -28,10 +31,13 @@
     <ul class="sidenav grey darken-4" id="mobile-demo">
         <li><a class="white-text" href="{{ path('home') }}">Home</a></li>
         <li><a class="white-text" href="{{ path('games.index') }}">All games</a></li>
+        {% if is_granted('ROLE_USER') or is_granted('ROLE_ADMIN') %}
         <li><a class="white-text" href="{{ path('games.addGame') }}">New game</a></li>
+        {% endif %}
+        {% if is_granted('ROLE_ADMIN') %}
         <li><a class="white-text" href="{{ path('admin.index') }}">admin</a></li>
+        {% endif %}
         <li><a class="white-text" href="{{ path('app_login') }}">LoGin</a></li>
-        <li><a class="white-text" href="{{ path('app_logout') }}">LoGOut</a></li>
     </ul>
 
         {% block body %}{% endblock %}

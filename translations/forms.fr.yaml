@@ -5,3 +5,7 @@ Categories: Catégories
 Validate: Validé
 Username: Nom d'utilisateur
 Password: Mot de passe
+Rules description: Courte description
+Rules win: Pour gagner
+Rules details: Règles, (séparez en revenant à la ligne)
+Rules url: Lien vers une régle 'officielle'

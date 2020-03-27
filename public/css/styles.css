@@ -45,7 +45,7 @@ main {
     flex: 1 0 auto;
 }
 
-h1, h2{
+h1, h2, h3{
     font-family: JediTitle;
     text-shadow: 1px 0 2px black, 0 0 2px white, 0 0 3px black, 2px 0 4px lightyellow;
     color: #ffd600 !important;

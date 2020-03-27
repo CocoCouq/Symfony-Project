@@ -37,13 +37,6 @@ class GamesList
     private $materiel;
 
     /**
-     * @Assert\Regex("/^[\w\s\.\:\,\(\)\?\!\'\«\»""\-\+\=\$\€\%\&\*éèêëûüùîïíôöœàáâæ]+$/",
-     *     message="Vous utilisez des caractères interdits")
-     * @ORM\Column(type="text")
-     */
-    private $regle;
-
-    /**
      * @ORM\Column(type="integer", nullable=true)
      */
     private $categories;
@@ -52,6 +45,27 @@ class GamesList
      * @ORM\Column(type="boolean", nullable=true)
      */
     private $validate;
+
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $rules_description;
+
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $rules_win;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $rules_url;
+
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $rules_details;
 
     public function getId(): ?int
     {
@@ -87,17 +101,6 @@ class GamesList
         return $this->materiel ? 'avec' : 'sans';
     }
 
-    public function getRegle(): ?string
-    {
-        return $this->regle;
-    }
-
-    public function setRegle(string $regle): self
-    {
-        $this->regle = $regle;
-
-        return $this;
-    }
 
     public function getCategories(): ?int
     {
@@ -129,6 +132,55 @@ class GamesList
     public function setValidate(?bool $validate): self
     {
         $this->validate = $validate;
+
+        return $this;
+    }
+
+    public function getRulesDescription(): ?string
+    {
+        return $this->rules_description;
+    }
+
+    public function setRulesDescription(string $rules_description): self
+    {
+        $this->rules_description = $rules_description;
+
+        return $this;
+    }
+
+
+    public function getRulesWin(): ?string
+    {
+        return $this->rules_win;
+    }
+
+    public function setRulesWin(string $rules_win): self
+    {
+        $this->rules_win = $rules_win;
+
+        return $this;
+    }
+
+    public function getRulesUrl(): ?string
+    {
+        return $this->rules_url;
+    }
+
+    public function setRulesUrl(?string $rules_url): self
+    {
+        $this->rules_url = $rules_url;
+
+        return $this;
+    }
+
+    public function getRulesDetails(): ?string
+    {
+        return $this->rules_details;
+    }
+
+    public function setRulesDetails(string $rules_details): self
+    {
+        $this->rules_details = $rules_details;
 
         return $this;
     }

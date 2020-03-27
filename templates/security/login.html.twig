@@ -5,15 +5,21 @@
 {% block body %}
     <h1 class="center-align">Customs</h1>
     <main class="container row">
+
+    {% if is_granted('ROLE_EMAIL') or is_granted('ROLE_ADMIN') or is_granted('ROLE_USER') %}
+        <div class="divLogin center-align grey darken-4 z-depth-2">
+            <p class="pHome yellow-text">
+            Vous êtes connecté,
+            </p>
+            <p class="pHome yellow-text" id="pHome1">
+                {{ app.user.username }}
+            </p>
+            <a class="btn section" href="{{ path('app_logout') }}" title="logout">Se déconnecter</a>
+        </div>
+    {% else %}
         <div class="col s10 offset-s1 m8 offset-m2 l6 offset-l3">
             <form method="post">
                 <div class="divLogin grey darken-4 z-depth-2">
-                    {% if app.user %}
-                        <div class="center-align">
-                            You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
-                        </div>
-                    {% endif %}
-
                     {% if error %}
                         <div class="spanRed center-align">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
                     {% endif %}
@@ -46,5 +52,8 @@
                 <a class="white-text" href="{{ path('signin') }}" title="New user">S'inscrire</a>
             </section>
         </div>
+
+    {% endif %}
     </main>
+
 {% endblock %}
